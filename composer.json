@@ -1,0 +1,17 @@
+{
+    "name": "root/larchitecture",
+    "authors": [
+        {
+            "name": "Anathea",
+            "email": "solene.fernandez-serrano@hetic.net"
+        }
+    ],
+    "require": {},
+    "autoload": 
+        {
+            "psr-4":
+            {
+                "CRUD\\": "crud/"
+            }
+        }
+}
