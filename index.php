@@ -9,6 +9,7 @@
 require 'crud/DB.php';
 require 'crud/Region.php';
 require 'crud/Partenaire.php';
+require 'crud/Revue.php';
 
 DB::init();
 //$region = new Region();
@@ -46,3 +47,18 @@ DB::init();
 //$partenaire->delete();
 //$partenaire->read();
 //var_dump($partenaire);
+
+//$revue = new Revue(11);
+//$revue->date = "2017";
+//$revue->numero = "286";
+//$revue->visibilite = 0;
+//$revue->create();
+//$revue->read();
+//var_dump($revue);
+//$revue->date = "2017";
+//$revue->numero = "286";
+//$revue->visibilite = 1;
+//$revue->update();
+//$revue->read();
+//var_dump($revue);
+//$revue->delete();
