@@ -6,6 +6,11 @@
  * and open the template in the editor.
  */
 
+namespace CRUD;
+
+use \PDO;
+use \CRUD\DB;
+
 /**
  * Description of Partenaire
  *

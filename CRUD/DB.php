@@ -2,6 +2,9 @@
 
 namespace CRUD;
 
+use \PDO;
+use \PDOException;
+
 /**
  * Description of DB
  *

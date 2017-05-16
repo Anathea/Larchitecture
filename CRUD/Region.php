@@ -4,39 +4,39 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+ * One day... Maybe...
  */
 
+namespace CRUD;
+
+use \PDO;
+use \CRUD\DB;
+
 /**
- * Description of Revue
+ * Description of region
  *
  * @author anathea
  */
-class Revue {
-
-    public $id;
-    public $date;
-    public $numero;
-    public $visibilite;
+class Region {
     
-    public function __construct($id = -1, $date = null, $numero = null, $visibilite = 1) 
+    public $id;
+    public $nom;
+    
+    public function __construct($id = -1, $nom = null) 
     {
         $this->id = $id;
-        $this->date = $date;
-        $this->numero = $numero;
-        $this->visibilite = $visibilite;
+        $this->nom = $nom;
     }
     
     public function create()
     {
-        $sql = "INSERT INTO `revues`
-                  (`date`, `numero`, `visibilite`) 
+        $sql = "INSERT INTO `regions`
+                  (`nom`) 
                 VALUES 
-                  (:date, :numero, :visibilite)
+                  (:nom)
                 ;";
         $stmt = DB::$pdo->prepare($sql);
-        $stmt->bindValue(':date', $this->date, PDO::PARAM_INT);
-        $stmt->bindValue(':numero', $this->numero, PDO::PARAM_INT);
-        $stmt->bindValue(':visibilite', $this->visibilite, PDO::PARAM_INT);
+        $stmt->bindValue(':nom', $this->nom, PDO::PARAM_STR);
         $stmt->execute();
         $this->id = DB::$pdo->lastInsertId();
     }
@@ -44,11 +44,9 @@ class Revue {
     public function read() 
     {
         $sql = "SELECT
-                  `date`,
-                  `numero`,
-                  `visibilite`
+                  `nom`
                 FROM
-                  `revues`
+                  `regions`
                 WHERE
                   `id` = :id
                   ;";
@@ -56,34 +54,28 @@ class Revue {
         $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
         $stmt->execute();
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
-        $this->date = $data["date"];
-        $this->numero = $data["numero"];
-        $this->visibilite = $data["visibilite"];
+        $this->nom = $data["nom"];
     }
     
     public function update()
     {
         $sql = "UPDATE
-                  `revues`
+                  `regions`
                 SET
-                  `date`= :date,
-                  `numero` = :numero,
-                  `visibilite` = :visibilite
+                  `nom`= :nom
                 WHERE
                   `id` = :id
                 ;";
         $stmt = DB::$pdo->prepare($sql);
         $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
-        $stmt->bindValue(':date', $this->date, PDO::PARAM_INT);
-        $stmt->bindValue(':numero', $this->numero, PDO::PARAM_INT);
-        $stmt->bindValue(':visibilite', $this->visibilite, PDO::PARAM_INT);
+        $stmt->bindValue(':nom', $this->nom, PDO::PARAM_STR);
         $stmt->execute();
     }
     
     public function delete() 
     {
         $sql = "DELETE FROM
-                  `revues`
+                  `regions`
                 WHERE
                   `id` = :id
                 LIMIT 1
