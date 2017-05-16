@@ -1,17 +1,16 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace CRUD;
 
 /**
  * Description of DB
  *
  * @author anathea
+ * @package CRUD
+ * Connexion à la base de données
  */
 class DB {
+    
     private static $dbName = "Larchitecte";
     private static $host = "localhost";
     private static $port = "3306";
@@ -30,4 +29,5 @@ class DB {
         }
         static::$pdo->exec('SET NAMES UTF8;');
     }
+    
 }
