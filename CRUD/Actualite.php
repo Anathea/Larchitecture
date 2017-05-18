@@ -16,7 +16,7 @@ use \PDO;
  * @author anathea
  */
 class Actualite {
-    
+
     public $id;
     public $date;
     public $architecte;
@@ -26,10 +26,10 @@ class Actualite {
     public $departement;
     public $description;
     public $visuel;
-    
-    public function __construct($id = -1, $date = null, $architecte = null, 
-            $realisation = null, $rubrique = null, $lieu = null, 
-            $departement = null, $description = null, $visuel = null) 
+
+    public function __construct($id = -1, $date = null, $architecte = null,
+            $realisation = null, $rubrique = null, $lieu = null,
+            $departement = null, $description = null, $visuel = null)
     {
         $this->id = $id;
         $this->date = $date;
@@ -41,12 +41,12 @@ class Actualite {
         $this->description = $description;
         $this->visuel = $visuel;
     }
-    
-    public function create() 
+
+    public function create()
     {
         $sql = "INSERT INTO `actualites`
-                  (`date`, `architecte`, `realisation`, `rubrique`, `lieu`, `departement`, `description`, `visuel`) 
-                VALUES 
+                  (`date`, `architecte`, `realisation`, `rubrique`, `lieu`, `departement`, `description`, `visuel`)
+                VALUES
                   (:date, :architecte, :realisation, :rubrique, :lieu, :departement, :description, :visuel)
                 ;";
         $stmt = DB::$pdo->prepare($sql);
@@ -61,17 +61,17 @@ class Actualite {
         $stmt->execute();
         $this->id = DB::$pdo->lastInsertId();
     }
-    
-    public function read() 
+
+    public function read()
     {
         $sql = "SELECT
-                  `date`, 
-                  `architecte`, 
-                  `realisation`, 
-                  `rubrique`, 
-                  `lieu`, 
-                  `departement`, 
-                  `description`, 
+                  `date`,
+                  `architecte`,
+                  `realisation`,
+                  `rubrique`,
+                  `lieu`,
+                  `departement`,
+                  `description`,
                   `visuel`
                 FROM
                   `actualites`
@@ -91,12 +91,12 @@ class Actualite {
         $this->description = $data["description"];
         $this->visuel = $data["visuel"];
     }
-    
+
     public function update()
     {
         $sql = "UPDATE
                   `actualites`
-                SET 
+                SET
                   `date` = :date,
                   `architecte` = :architecte,
                   `realisation` = :realisation,
@@ -104,8 +104,8 @@ class Actualite {
                   `lieu` = :lieu,
                   `departement` = :departement,
                   `description` = :description,
-                  `visuel` = :visuel 
-                WHERE 
+                  `visuel` = :visuel
+                WHERE
                   `id` = :id
                 ;";
         $stmt = DB::$pdo->prepare($sql);
@@ -120,11 +120,11 @@ class Actualite {
         $stmt->bindValue(':visuel', $this->visuel, PDO::PARAM_STR);
         $stmt->execute();
     }
-    
+
     public function delete()
     {
         $sql = "DELETE actua, imgs, entr, oeuvres
-                FROM 
+                FROM
                   `actualites` AS actua
                 LEFT JOIN `actualites_images` AS imgs
                   ON imgs.id_actualite = actua.id
@@ -132,50 +132,50 @@ class Actualite {
                   ON entr.id_actualite = actua.id
                 LEFT JOIN `actualites_ouvrages` AS oeuvres
                   ON oeuvres.id_actualite = actua.id
-                WHERE 
+                WHERE
                   actua.id = :id
                  ;";
         $stmt = DB::$pdo->prepare($sql);
         $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
         $stmt->execute();
     }
-    
+
     public function createImage($img)
     {
         $img->id_actualite = $this->id;
         $img->create();
     }
-    
+
     public function createOuvrage($oeuvre)
     {
         $oeuvre->id_actualite = $this->id;
         $oeuvre->create();
     }
-    
+
     public function createEntreprise($entr)
     {
         $entr->id_actualite = $this->id;
         $entr->create();
     }
-    
+
     public function readImages()
     {
         return ActualitesImage::readImages($this);
     }
-    
+
     public function readOuvrages()
     {
         return ActualitesOuvrage::readOuvrages($this);
     }
-    
+
     public function readEntreprises()
     {
         return ActualitesEntreprise::readEntreprises($this);
     }
-    
+
     public static function readAll($offset = 0, $count = PHP_INT_MAX)
     {
-        $sql = "SELECT 
+        $sql = "SELECT
                   `id`,
                   `date`,
                   `architecte`,
@@ -184,8 +184,8 @@ class Actualite {
                   `lieu`,
                   `departement`,
                   `description`,
-                  `visuel` 
-                FROM 
+                  `visuel`
+                FROM
                   `actualites`
                 LIMIT :offset, :count
                 ;";
@@ -196,12 +196,12 @@ class Actualite {
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $actus = [];
         foreach ($data as $row) {
-            $actu = new Actualite($row["id"], $row["date"], $row["architecte"], 
-                    $row["realisation"], $row["rubrique"], $row["lieu"], 
+            $actu = new Actualite($row["id"], $row["date"], $row["architecte"],
+                    $row["realisation"], $row["rubrique"], $row["lieu"],
                     $row["departement"], $row["description"], $row["visuel"]);
             $actus[] = $actu;
-        } 
+        }
         return $actus;
     }
-    
+
 }

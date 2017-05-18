@@ -17,15 +17,15 @@ use \CRUD\DB;
  * @author anathea
  */
 class Partenaire {
-    
+
     public $id;
     public $nom;
     public $libelle;
     public $id_region;
     public $departement;
     public $site;
-    
-    public function __construct($id = -1, $nom = null, $libelle = null, $id_region = null, $departement = null, $site = null) 
+
+    public function __construct($id = -1, $nom = null, $libelle = null, $id_region = null, $departement = null, $site = null)
     {
         $this->id = $id;
         $this->nom = $nom;
@@ -34,12 +34,12 @@ class Partenaire {
         $this->departement = $departement;
         $this->site = $site;
     }
-    
+
     public function create()
     {
         $sql = "INSERT INTO `partenaires`
-                  (`nom`, `libelle`, `id_region`, `departement`, `site`) 
-                VALUES 
+                  (`nom`, `libelle`, `id_region`, `departement`, `site`)
+                VALUES
                   (:nom, :libelle, :id_region, :departement, :site)
                 ;";
         $stmt = DB::$pdo->prepare($sql);
@@ -51,8 +51,8 @@ class Partenaire {
         $stmt->execute();
         $this->id = DB::$pdo->lastInsertId();
     }
-    
-    public function read() 
+
+    public function read()
     {
         $sql = "SELECT
                   `nom`, `libelle`, `id_region`, `departement`, `site`
@@ -71,16 +71,16 @@ class Partenaire {
         $this->departement = $data["departement"];
         $this->site = $data["site"];
     }
-    
+
     public function update()
     {
         $sql = "UPDATE
                   `partenaires`
                 SET
-                  `nom`= :nom, 
-                  `libelle` = :libelle, 
-                  `id_region` = :id_region, 
-                  `departement` = :departement, 
+                  `nom`= :nom,
+                  `libelle` = :libelle,
+                  `id_region` = :id_region,
+                  `departement` = :departement,
                   `site` = :site
                 WHERE
                   `id` = :id
@@ -94,8 +94,8 @@ class Partenaire {
         $stmt->bindValue(':site', $this->site, PDO::PARAM_STR);
         $stmt->execute();
     }
-    
-    public function delete() 
+
+    public function delete()
     {
         $sql = "DELETE FROM
                   `partenaires`
@@ -107,7 +107,7 @@ class Partenaire {
         $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
         $stmt->execute();
     }
-    
+
     public static function readPartenaires($region)
     {
         $sql = "SELECT
@@ -127,5 +127,5 @@ class Partenaire {
         }
         return $partenaires;
     }
-    
+
 }

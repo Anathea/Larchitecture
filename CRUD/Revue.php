@@ -23,19 +23,19 @@ class Revue {
     public $numero;
     public $visibilite;
 
-    public function __construct($id = -1, $date = null, $numero = null, $visibilite = 1) 
+    public function __construct($id = -1, $date = null, $numero = null, $visibilite = 1)
     {
         $this->id = $id;
         $this->date = $date;
         $this->numero = $numero;
         $this->visibilite = $visibilite;
     }
-    
+
     public function create()
     {
         $sql = "INSERT INTO `revues`
-                  (`date`, `numero`, `visibilite`) 
-                VALUES 
+                  (`date`, `numero`, `visibilite`)
+                VALUES
                   (:date, :numero, :visibilite)
                 ;";
         $stmt = DB::$pdo->prepare($sql);
@@ -45,8 +45,8 @@ class Revue {
         $stmt->execute();
         $this->id = DB::$pdo->lastInsertId();
     }
-    
-    public function read() 
+
+    public function read()
     {
         $sql = "SELECT
                   `date`,
@@ -65,7 +65,7 @@ class Revue {
         $this->numero = $data["numero"];
         $this->visibilite = $data["visibilite"];
     }
-    
+
     public function update()
     {
         $sql = "UPDATE
@@ -84,8 +84,8 @@ class Revue {
         $stmt->bindValue(':visibilite', $this->visibilite, PDO::PARAM_INT);
         $stmt->execute();
     }
-    
-    public function delete() 
+
+    public function delete()
     {
         $sql = "DELETE rev, rr
                 FROM
@@ -99,20 +99,20 @@ class Revue {
         $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
         $stmt->execute();
     }
-    
+
     public function readRegions()
     {
         return RevueRegion::readRegions($this);
     }
-    
+
     public static function readAll($offset = 0, $count = PHP_INT_MAX)
     {
-        $sql = "SELECT 
+        $sql = "SELECT
                   `id`,
                   `date`,
                   `numero`,
-                  `visibilite` 
-                FROM 
+                  `visibilite`
+                FROM
                   `revues`
                 LIMIT :offset, :count
                 ;";
@@ -125,8 +125,8 @@ class Revue {
         foreach ($data as $row) {
             $rev = new Revue($row["id"], $row["date"], $row["numero"], $row["visibilite"]);
             $revs[] = $rev;
-        } 
+        }
         return $revs;
     }
-    
+
 }

@@ -17,23 +17,23 @@ use \CRUD\DB;
  * @author anathea
  */
 class ActualitesImage {
-    
+
     public $id;
     public $image;
     public $id_actualite;
-    
-    public function __construct($id = -1, $image = null, $id_actualite = null) 
+
+    public function __construct($id = -1, $image = null, $id_actualite = null)
     {
         $this->id = $id;
         $this->image = $image;
         $this->id_actualite = $id_actualite;
     }
-    
-    public function create() 
+
+    public function create()
     {
         $sql = "INSERT INTO `actualites_images`
-                  (`image`, `id_actualite`) 
-                VALUES 
+                  (`image`, `id_actualite`)
+                VALUES
                   (:image, :id_actualite)
                 ;";
         $stmt = DB::$pdo->prepare($sql);
@@ -42,16 +42,16 @@ class ActualitesImage {
         $stmt->execute();
         $this->id = DB::$pdo->lastInsertId();
     }
-    
+
     public function read()
     {
-        $sql = "SELECT 
-                  `id`, 
-                  `image`, 
+        $sql = "SELECT
+                  `id`,
+                  `image`,
                   `id_actualite`
-                FROM 
-                  `actualites_images` 
-                WHERE 
+                FROM
+                  `actualites_images`
+                WHERE
                   `id` = :id
                   ;";
         $stmt = DB::$pdo->prepare($sql);
@@ -61,16 +61,16 @@ class ActualitesImage {
         $this->image = $data["image"];
         $this->id_actualite = $data["id_actualite"];
     }
-    
-    public function update() 
+
+    public function update()
     {
-        $sql = "UPDATE 
-                  `actualites_images` 
-                SET 
+        $sql = "UPDATE
+                  `actualites_images`
+                SET
                   `id` = :id,
                   `image` = :image,
                   `id_actualite` = :id_actualite
-                WHERE 
+                WHERE
                   `id` = :id
                 ;";
         $stmt = DB::$pdo->prepare($sql);
@@ -79,12 +79,12 @@ class ActualitesImage {
         $stmt->bindValue(':id_actualite', $this->id_actualite, PDO::PARAM_INT);
         $stmt->execute();
     }
-    
+
     public function delete()
     {
-        $sql = "DELETE FROM 
-                  `actualites_images` 
-                WHERE 
+        $sql = "DELETE FROM
+                  `actualites_images`
+                WHERE
                   `id` = :id
                 LIMIT 1
                 ;";
@@ -92,16 +92,16 @@ class ActualitesImage {
         $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
         $stmt->execute();
     }
-    
+
     public static function readImages($actu)
     {
-        $sql = "SELECT 
-                  `id`, 
-                  `image`, 
+        $sql = "SELECT
+                  `id`,
+                  `image`,
                   `id_actualite`
-                FROM 
-                  `actualites_images` 
-                WHERE 
+                FROM
+                  `actualites_images`
+                WHERE
                   `id_actualite` = :id
                   ;";
         $stmt = DB::$pdo->prepare($sql);
@@ -112,7 +112,7 @@ class ActualitesImage {
         foreach ($data as $row) {
             $img = new ActualitesImage($row["id"], $row["image"], $row["id_actualite"]);
             $imgs[] = $img;
-        } 
+        }
         return $imgs;
     }
 

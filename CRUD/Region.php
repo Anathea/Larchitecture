@@ -18,21 +18,21 @@ use \CRUD\DB;
  * @author anathea
  */
 class Region {
-    
+
     public $id;
     public $nom;
 
-    public function __construct($id = -1, $nom = null) 
+    public function __construct($id = -1, $nom = null)
     {
         $this->id = $id;
         $this->nom = $nom;
     }
-    
+
     public function create()
     {
         $sql = "INSERT INTO `regions`
-                  (`nom`) 
-                VALUES 
+                  (`nom`)
+                VALUES
                   (:nom)
                 ;";
         $stmt = DB::$pdo->prepare($sql);
@@ -40,8 +40,8 @@ class Region {
         $stmt->execute();
         $this->id = DB::$pdo->lastInsertId();
     }
-    
-    public function read() 
+
+    public function read()
     {
         $sql = "SELECT
                   `nom`
@@ -56,7 +56,7 @@ class Region {
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
         $this->nom = $data["nom"];
     }
-    
+
     public function update()
     {
         $sql = "UPDATE
@@ -71,8 +71,8 @@ class Region {
         $stmt->bindValue(':nom', $this->nom, PDO::PARAM_STR);
         $stmt->execute();
     }
-    
-    public function delete() 
+
+    public function delete()
     {
         $sql = "DELETE reg, rr, part
                 FROM
@@ -94,24 +94,24 @@ class Region {
         $part->id_region = $this->id;
         $part->create();
     }
-    
+
     public function readPartenaires()
     {
         return Partenaire::readPartenaires($this);
     }
-    
+
     public function readRevues()
     {
         return RevueRegion::readRevues($this);
     }
-    
+
     public static function readAll($offset = 0, $count = PHP_INT_MAX)
     {
         $sql = "SELECT
                   `id`,
-                  `nom` 
-                  FROM 
-                  `regions` 
+                  `nom`
+                  FROM
+                  `regions`
                   LIMIT :offset, :count
                   ;";
         $stmt = DB::$pdo->prepare($sql);
@@ -123,8 +123,8 @@ class Region {
         foreach ($data as $row) {
             $reg = new Region($row["id"], $row["nom"]);
             $regs[] = $reg;
-        } 
+        }
         return $regs;
     }
-    
+
 }
