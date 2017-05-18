@@ -1,4 +1,3 @@
-/* --------- general ----------- */
 .clearfix:before,
 .clearfix:after{
 	content: " ";
@@ -8,12 +7,8 @@
 	clear: both;
 }
 
-body {
-    overflow-x: hidden;
-}
 
 
-/* --------- connexion ----------- */
 .connexion {
 	width: 100%;
 	height: 100%;
@@ -48,8 +43,8 @@ body {
 }
 .connexion main form input{
 	width: 30%;
-	margin: 15px 0;
-        padding: 12px 0.5%;
+	margin: 3% 0;
+	padding: 2% 0.5%;
 	border-radius: 4px;
 	border: 1px solid #979797;
 }
@@ -60,27 +55,10 @@ body {
 	font-weight: 800;
 	color: #FFFFFF;
 }
-
-@media only screen and (max-width: 1024px) {
-    .connexion main {
-        width: 80%;
-    }
+------actu------
+* {
+	width: 100%;
 }
-
-@media only screen and (max-width: 760px) {
-    .connexion main {
-        width: 100%;
-    }
-    .connexion .samy {
-        width: 90%;
-    }
-    
-    .connexion main form input, .connexion input[type="submit"] {
-        width: 60%;
-    }
-}
-
-/* --- actu ---- */
 .actu #haut {
 	width: 20%;
 	float: right;
@@ -98,8 +76,7 @@ body {
 .actu h1 {
 	text-align: center;
 	font-family: "Proxima Nova";
-	margin-top: 5%; 
-	margin-bottom: 1%; 
+	margin-top: 7%; 
 }
 .actu .contenu {
 	width: 90%;
@@ -109,14 +86,12 @@ body {
 	justify-content: space-between;
 }
 .actu .julien {
-	width: 11%;
+	width: 10%;
 }
 .actu img {
 	float: left;
 	margin-left: 5%;
 	margin-right: 5%;
-        height: 500px;
-        width: 2px;
 }
 .actu ul {
 	margin: 50% 0;
@@ -179,7 +154,6 @@ textarea {
 	border: 1px solid #979797;
 	border-radius: 4px;
 	resize: none;
-        width: 90%;
 }
 textarea::-webkit-input-placeholder {
 	font-size: 20px;
@@ -195,53 +169,10 @@ textarea::-webkit-input-placeholder {
 	border: none;
 	width: 78%;
 }
-
-@media only screen and (max-width: 1024px) {    
-    .actu .contenu, .actu form {
-        width: 100%;
-    }
-    
-    .actu ul {
-        padding: 1%;
-    }
+---------partenaires-----------
+* {
+	width: 100%;
 }
-
-@media only screen and (max-width: 760px) {    
-    body {
-        background-color: lightcyan;
-    }
-/*    .actu #haut {
-        width: 100%;
-        float: none;
-    }
-    
-    .actu #haut a {
-        display: block;
-        height: 15px;
-        padding: 10px;
-        text-align: center;
-    }
-    
-    .actu div.julien {
-        width: 100%;
-        display: block;
-        float: left;
-    }
-    
-    .actu .contenu ul {
-        display: inline-block;
-    }
-    
-    .actu .contenu img {
-        clear: both;
-        display: block;
-        float: left;
-        width: 90%;
-        height: 1px;
-    }*/
-}
-
-/* --------- partenaires ----------- */
 .partenaires #haut {
 	width: 20%;
 	float: right;
@@ -259,8 +190,7 @@ textarea::-webkit-input-placeholder {
 .partenaires h1 {
 	text-align: center;
 	font-family: "Proxima Nova";
-	margin-top: 5%; 
-	margin-bottom: 1%;
+	margin-top: 7%; 
 }
 .partenaires .contenu {
 	width: 90%;
@@ -319,13 +249,17 @@ textarea::-webkit-input-placeholder {
 }
 .partenaires form .gauche input{
 	width: 50%;
+	margin: 3% 0;
 	padding: 3% 0.5%;
 	border-radius: 4px;
 	border: 1px solid #979797;
 	font-size: 20px;
 	font-weight: 300;
 }
-/* ----------revues------------ */
+----------revues------------
+* {
+	width: 100%;
+}
 .revues #haut {
 	width: 20%;
 	float: right;
@@ -427,7 +361,11 @@ textarea::-webkit-input-placeholder {
 	border: none;
 	width: 78%;
 }
-/* ------- modification des actus -------- */
+-------modification des actus--------
+
+* {
+	width: 100%;
+}
 .modif-actu #haut {
 	width: 20%;
 	float: right;
@@ -493,7 +431,6 @@ textarea::-webkit-input-placeholder {
 .modif-actu table td {
 	font-family: "Proxima Nova";
 }
-
 /*--------modif-revues---------*/
 .modif-revues #haut {
 	width: 20%;
@@ -512,8 +449,7 @@ textarea::-webkit-input-placeholder {
 .modif-revues h1 {
 	text-align: center;
 	font-family: "Proxima Nova";
-	margin-top: 5%; 
-	margin-bottom: 1%;
+	margin-top: 7%; 
 }
 .modif-revues .contenu {
 	width: 90%;
@@ -561,7 +497,6 @@ textarea::-webkit-input-placeholder {
 .modif-revues table td {
 	font-family: "Proxima Nova";
 }
-
 /*---------modif-partenaires----------*/
 .modif-partenaires #haut {
 	width: 20%;
@@ -580,8 +515,7 @@ textarea::-webkit-input-placeholder {
 .modif-partenaires h1 {
 	text-align: center;
 	font-family: "Proxima Nova";
-	margin-top: 5%; 
-	margin-bottom: 1%;
+	margin-top: 7%; 
 }
 .modif-partenaires .contenu {
 	width: 90%;
