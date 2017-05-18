@@ -1,0 +1,565 @@
+.clearfix:before,
+.clearfix:after{
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+
+
+
+.connexion {
+	width: 100%;
+	height: 100%;
+}
+.connexion main {
+	width: 50%;
+	margin: 0 auto;
+	font-family: "Proxima Nova";
+	padding-top: 15%;
+
+}
+
+.connexion .samy{
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+}
+.connexion main h2 {
+	font-weight: 400;
+	margin: 0 auto;
+	text-align: center;
+}
+.connexion main form {
+	display: block;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+}
+.connexion main form input{
+	width: 30%;
+	margin: 3% 0;
+	padding: 2% 0.5%;
+	border-radius: 4px;
+	border: 1px solid #979797;
+}
+.connexion input[type="submit"] {
+	width: 40%;
+	border: #33BFD0;
+	background: #33BFD0;
+	font-weight: 800;
+	color: #FFFFFF;
+}
+------actu------
+* {
+	width: 100%;
+}
+.actu #haut {
+	width: 20%;
+	float: right;
+	font-family: "Proxima Nova";
+}
+.actu #haut a {
+	margin: 0 5%;
+}
+.actu #haut #site {
+	color: #F5A837;
+}
+.actu #haut #deconnexion {
+	color: #33BFD0;
+}
+.actu h1 {
+	text-align: center;
+	font-family: "Proxima Nova";
+	margin-top: 7%; 
+}
+.actu .contenu {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.actu .julien {
+	width: 10%;
+}
+.actu img {
+	float: left;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.actu ul {
+	margin: 50% 0;
+	float: left;
+}  
+.actu form .droite,
+.actu form .gauche{
+	width: 100%;
+}
+.actu ul li {
+	list-style: none;
+	font-family: "Proxima Nova";
+	margin: 10% 0;
+}
+.actu ul li a {
+	text-decoration: none;
+}
+.actu ul li:first-child a {
+	font-weight: bold;
+	color: #000;
+}
+.actu ul li:nth-child(2) a {
+	color: #33BFD0;
+}
+.actu ul li:last-child a {
+	color: #F5A837;
+}
+.actu form {
+	width: 80%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+.actu form input {
+	margin: 2% 0;
+}
+.actu form .gauche input{
+	width: 50%;
+	margin: 3% 0;
+	padding: 3% 0.5%;
+	border-radius: 4px;
+	border: 1px solid #979797;
+	font-size: 20px;
+	font-weight: 300;
+}
+.actu form .droite input{
+	width: 65%;
+	margin: 3% 0;
+	padding: 3% 0.5%;
+	border-radius: 4px;
+	border: 1px solid #979797;
+	font-size: 20px;
+	font-weight: 300;
+}
+.actu form .droite input:first-child {
+	width: 76.5%;
+	position: relative;
+}
+textarea {
+	border: 1px solid #979797;
+	border-radius: 4px;
+	resize: none;
+}
+textarea::-webkit-input-placeholder {
+	font-size: 20px;
+}
+.actu form .droite input:nth-child(3) {
+	width: 11%;
+	background: white;
+}
+.actu form .droite input:last-child {
+	background: #33BFD0;
+	color: white;
+	font-weight: 600;
+	border: none;
+	width: 78%;
+}
+---------partenaires-----------
+* {
+	width: 100%;
+}
+.partenaires #haut {
+	width: 20%;
+	float: right;
+	font-family: "Proxima Nova";
+}
+.partenaires #haut a {
+	margin: 0 5%;
+}
+.partenaires #haut #site {
+	color: #F5A837;
+}
+.partenaires #haut #deconnexion {
+	color: #33BFD0;
+}
+.partenaires h1 {
+	text-align: center;
+	font-family: "Proxima Nova";
+	margin-top: 7%; 
+}
+.partenaires .contenu {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.partenaires .julien {
+	width: 10%;
+}
+.partenaires img {
+	float: left;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.partenaires ul {
+	margin: 50% 0;
+	float: left;
+}  
+.partenaires form .droite,
+.partenaires form .gauche{
+	width: 100%;
+}
+.partenaires ul li {
+	list-style: none;
+	font-family: "Proxima Nova";
+	margin: 10% 0;
+}
+.partenaires ul li a {
+	text-decoration: none;
+}
+.partenaires ul li:first-child a {
+	font-weight: bold;
+	color: #000;
+}
+.partenaires ul li:nth-child(2) a {
+	color: #33BFD0;
+}
+.partenaires ul li:last-child a {
+	color: #F5A837;
+}
+.partenaires form {
+	width: 80%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+.partenaires form input {
+	margin: 2% 0;
+}
+.partenaires form .gauche input:last-child {
+	background: #33BFD0;
+	border-color: #33BFD0;
+	color: #FFF;
+}
+.partenaires form .gauche input{
+	width: 50%;
+	margin: 3% 0;
+	padding: 3% 0.5%;
+	border-radius: 4px;
+	border: 1px solid #979797;
+	font-size: 20px;
+	font-weight: 300;
+}
+----------revues------------
+* {
+	width: 100%;
+}
+.revues #haut {
+	width: 20%;
+	float: right;
+	font-family: "Proxima Nova";
+}
+.revues #haut a {
+	margin: 0 5%;
+}
+.revues #haut #site {
+	color: #F5A837;
+}
+.revues #haut #deconnexion {
+	color: #33BFD0;
+}
+.revues h1 {
+	text-align: center;
+	font-family: "Proxima Nova";
+	margin-top: 7%; 
+}
+.revues .contenu {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.revues .julien {
+	width: 10%;
+}
+.revues img {
+	float: left;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.revues ul {
+	margin: 50% 0;
+	float: left;
+}  
+.revues form .droite,
+.revues form .gauche{
+	width: 100%;
+}
+.revues ul li {
+	list-style: none;
+	font-family: "Proxima Nova";
+	margin: 10% 0;
+}
+.revues ul li a {
+	text-decoration: none;
+}
+.revues ul li:first-child a {
+	font-weight: bold;
+	color: #000;
+}
+.revues ul li:nth-child(2) a {
+	color: #33BFD0;
+}
+.revues ul li:last-child a {
+	color: #F5A837;
+}
+.revues form {
+	width: 80%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+.revues form input {
+	margin: 2% 0;
+}
+.revues form .gauche input{
+	width: 50%;
+	margin: 3% 0;
+	padding: 3% 0.5%;
+	border-radius: 4px;
+	border: 1px solid #979797;
+	font-size: 20px;
+	font-weight: 300;
+}
+.revues form .droite input{
+	width: 65%;
+	margin: 3% 0;
+	padding: 3% 0.5%;
+	border-radius: 4px;
+	border: 1px solid #979797;
+	font-size: 20px;
+	font-weight: 300;
+}
+.revues form .droite input:first-child {
+	width: 76.5%;
+	position: relative;
+}
+.revues form .droite input:nth-child(2) {
+	width: 76.5%;
+} 
+.revues form .droite input:last-child {
+	background: #33BFD0;
+	color: white;
+	font-weight: 600;
+	border: none;
+	width: 78%;
+}
+-------modification des actus--------
+
+* {
+	width: 100%;
+}
+.modif-actu #haut {
+	width: 20%;
+	float: right;
+	font-family: "Proxima Nova";
+}
+.modif-actu #haut a {
+	margin: 0 5%;
+}
+.modif-actu #haut #site {
+	color: #F5A837;
+}
+.modif-actu #haut #deconnexion {
+	color: #33BFD0;
+}
+.modif-actu h1 {
+	text-align: center;
+	font-family: "Proxima Nova";
+	margin-top: 7%; 
+}
+.modif-actu .contenu {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.modif-actu .julien {
+	width: 10%;
+}
+.modif-actu img {
+	float: left;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.modif-actu ul {
+	margin: 50% 0;
+	float: left;
+}
+.modif-actu ul li {
+	list-style: none;
+	font-family: "Proxima Nova";
+	margin: 10% 0;
+}
+.modif-actu ul li a {
+	text-decoration: none;
+}
+.modif-actu ul li:first-child a {
+	font-weight: bold;
+	color: #000;
+}
+.modif-actu ul li:nth-child(2) a {
+	color: #33BFD0;
+}
+.modif-actu ul li:last-child a {
+	color: #F5A837;
+}
+
+.modif-actu table th {
+	font-family: "Proxima Nova";
+	text-align:left;
+	width: 10%;
+}
+.modif-actu table td {
+	font-family: "Proxima Nova";
+}
+/*--------modif-revues---------*/
+.modif-revues #haut {
+	width: 20%;
+	float: right;
+	font-family: "Proxima Nova";
+}
+.modif-revues #haut a {
+	margin: 0 5%;
+}
+.modif-revues #haut #site {
+	color: #F5A837;
+}
+.modif-revues #haut #deconnexion {
+	color: #33BFD0;
+}
+.modif-revues h1 {
+	text-align: center;
+	font-family: "Proxima Nova";
+	margin-top: 7%; 
+}
+.modif-revues .contenu {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.modif-revues .julien {
+	width: 10%;
+}
+.modif-revues img {
+	float: left;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.modif-revues ul {
+	margin: 50% 0;
+	float: left;
+}
+.modif-revues ul li {
+	list-style: none;
+	font-family: "Proxima Nova";
+	margin: 10% 0;
+}
+.modif-revues ul li a {
+	text-decoration: none;
+}
+.modif-revues ul li:first-child a {
+	font-weight: bold;
+	color: #000;
+}
+.modif-revues ul li:nth-child(2) a {
+	color: #33BFD0;
+}
+.modif-revues ul li:last-child a {
+	color: #F5A837;
+}
+
+.modif-revues table th {
+	font-family: "Proxima Nova";
+	text-align:left;
+	width: 10%;
+}
+.modif-revues table td {
+	font-family: "Proxima Nova";
+}
+/*---------modif-partenaires----------*/
+.modif-partenaires #haut {
+	width: 20%;
+	float: right;
+	font-family: "Proxima Nova";
+}
+.modif-partenaires #haut a {
+	margin: 0 5%;
+}
+.modif-partenaires #haut #site {
+	color: #F5A837;
+}
+.modif-partenaires #haut #deconnexion {
+	color: #33BFD0;
+}
+.modif-partenaires h1 {
+	text-align: center;
+	font-family: "Proxima Nova";
+	margin-top: 7%; 
+}
+.modif-partenaires .contenu {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.modif-partenaires .julien {
+	width: 10%;
+}
+.modif-partenaires img {
+	float: left;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.modif-partenaires ul {
+	margin: 50% 0;
+	float: left;
+}
+.modif-partenaires ul li {
+	list-style: none;
+	font-family: "Proxima Nova";
+	margin: 10% 0;
+}
+.modif-partenaires ul li a {
+	text-decoration: none;
+}
+.modif-partenaires ul li:first-child a {
+	font-weight: bold;
+	color: #000;
+}
+.modif-partenaires ul li:nth-child(2) a {
+	color: #33BFD0;
+}
+.modif-partenaires ul li:last-child a {
+	color: #F5A837;
+}
+
+.modif-partenaires table th {
+	font-family: "Proxima Nova";
+	text-align:left;
+	width: 10%;
+}
+.modif-partenaires table td {
+	font-family: "Proxima Nova";
+}
