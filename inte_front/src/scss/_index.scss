@@ -1,0 +1,104 @@
+// PAGE INDEX
+// SECTION HOME
+.section-home {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 100vh;
+	background-image: url('../../src/img/img-content/bckd-home.png');
+}
+
+.section-home__title {
+	margin-left: 45%;
+	margin-right: 5%;
+	font-family: $title-font;
+	font-size: 48px;
+	color: #fff;
+}
+
+.section-home__title::after {
+	content: '';
+	display: inline-block;
+	margin-left: 10px;
+	vertical-align: middle;
+	height: 5px;
+	width: 50px;
+	background: #fff;
+}
+
+// SECTION ABOUT
+.section-about {
+	padding: 140px 15%;
+	background-image: url('../../src/img/img-content/bckd-about.png');
+	background-size: cover;
+}
+
+.section-about__title {
+	@extend .titles2;
+	margin-bottom: 45px;
+	color: #000;
+}
+
+.section-about__text-container {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.section-about__paragraph {
+	width: 46%;
+	font-family: $title-font;
+	font-size: 18px;
+	color: #000;
+	line-height: 25px;
+}
+
+// SECTION NEWS
+.section-news {
+	padding: 140px 0 70px 15%;
+	background-image: url('../../src/img/img-content/bckd-news.png');
+	background-size: cover;
+}
+
+.section-news__title {
+	@extend .titles2;
+	margin-bottom: 45px;
+	color: #000;
+}
+
+.section-news__container {
+	height: 650px;
+	width: 100%;
+	overflow: scroll;
+}
+
+.section-news__content {
+	height: 100%;
+	width: 200%;
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+.section-news__news {
+	display: inline-block;
+	margin-right: 20px;
+	height: 565px;
+	width: 375px;
+	background: #fff;
+	border-radius: 5px;
+	background: blue;
+	position: relative;
+}
+
+.section-news__news-title {
+	font-family: $text-font;
+	text-transform: uppercase;
+	font-size: 32px;
+	color: #fff;
+	margin-right: 90px;
+	position: absolute;
+	top: 440px;
+	left: 50px;
+}

@@ -1,0 +1,15 @@
+// PAGE ACTU
+// SECTION ACTU
+.section-actu {
+	padding: 140px 0 70px 15%;
+	background-image: url('../../src/img/img-content/bckd-actu.jpg');
+	background-size: cover;
+	text-align: center;
+}
+
+.section-actu__title {
+	@extend .titles2;
+	margin-bottom: 95px;
+	color: #000;
+	text-align: left;
+}

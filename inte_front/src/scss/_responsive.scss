@@ -1,0 +1,260 @@
+// RESPONSIVE
+@media screen and (min-width: 769px) and (max-width: 942px) {
+	// RESPONSIVE HEADER
+	.header__title {
+		float: none;
+		text-align: center;
+		margin-bottom: 15px;
+	}
+
+	.header__list {
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 768px){
+	// RESPONSIVE HEADER
+	.header__list {
+		display: none;
+	}
+
+	.header__nav {
+		padding-bottom: 20px;
+	}
+
+	.header__title {
+		float: none;
+		text-align: center;
+	}
+
+	.header__burger-icon {
+		display: inline-block;
+	}
+
+	// RESPONSIVE FOOTER
+	.footer {
+		padding: 50px 10px;
+	}
+	
+	.footer__list {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 35px;
+		border: none;
+	}
+
+	.footer__li {
+		display: block;
+		margin-bottom: 24px;
+	}
+
+	.footer__link {
+		font-size: 20px;
+		color: #fff;
+		margin-right: 0;
+	}
+
+	.footer__link--last {
+		margin-bottom: 0;
+	}
+
+	.footer__logo {
+		display: block;
+		margin: 0 auto 35px auto;
+	}
+
+	// RESPONSIVE PAGE INDEX
+	// SECTION HOME
+	.section-home__title {
+		font-size: 30px;
+		line-height: 40px;
+		text-align: center;
+		margin: auto 10%;
+	}
+
+	.section-home__title::after {
+		display: block;
+		margin: 30px auto 0 auto;
+		vertical-align: middle;
+		height: 5px;
+		width: 40%;
+	}
+
+	// SECTION ABOUT
+	.section-about__paragraph {
+	width: 100%;
+	}
+
+	// RESPONSIVE PAGE ACTU
+	// SECTION ACTU
+	.section-actu {
+		background-attachment: fixed;
+	}
+
+	.section-actu__container {
+		flex-direction: column;
+	}
+
+	.section-actu__actu {
+		display: block;
+		margin-bottom: 70px;
+		height: 415px;
+		width: 100%;
+	}
+	
+	// RESPONSIVE PAGE CONTACT
+	// SECTION CONTACT
+	.section-contact__form {
+		width: 100%;
+	}
+
+	.section-contact__form-part {
+		display: block;
+		width: 100%;
+	}
+
+	.section-contact__form {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		height: auto;
+	}
+
+	.section-contact__input--validator {
+		margin: 20px auto;
+	}
+
+	// RESPONSIVE PAGE COMMANDE
+	// SECTION COMMANDE
+	.section-commande {
+		background-attachment: fixed;
+	}
+
+	.section-commande__form {
+		height: auto;
+		margin-bottom: 10px;
+	}
+
+	.section-commande__form-part {
+		display: none;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.section-commande__form-part--active {
+		display: block;
+	}
+
+	.section-commande__button-form,
+	.section-commande__input--validator {
+		display: none;
+		width: 100%;
+	}
+	
+	.section-commande__button--active {
+		display: inline-block;
+	}
+
+	.section-commande__form-step {
+		display: block;
+		margin-bottom: 50px;
+		font-size: 25px;
+	}
+
+	.section-commande__table,
+	.section-commande__button--euro,
+	.section-commande__button--franc {
+		display: none;
+	}
+
+	.section-commande__form-mobile,
+	.section-commande__button--price,
+	.section-commande__price {
+		display: block;
+	}
+
+	// RESPONSIVE PAGE ABONNEMENT
+	// SECTION ABONNEMENT
+	.section-abonnement {
+		background-attachment: fixed;
+	}
+
+	.section-abonnement__form {
+		height: auto;
+		margin-bottom: 10px;
+	}
+
+	.section-abonnement__form-part {
+		display: none;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.section-abonnement__form-part--active {
+		display: block;
+	}
+
+	.section-abonnemente__button-form,
+	.section-abonnement__input--validator {
+		display: none;
+		width: 100%;
+	}
+	
+	.section-abonnement__button--active {
+		display: inline-block;
+	}
+
+	.section-abonnement__form-step {
+		display: block;
+		margin-bottom: 50px;
+		font-size: 25px;
+	}
+
+	.section-abonnement__table,
+	.section-abonnement__button--euro,
+	.section-abonnement__button--franc {
+		display: none;
+	}
+
+	.section-abonnement__form-mobile,
+	.section-abonnement__button--price,
+	.section-abonnement__price {
+		display: block;
+	}
+
+	// RESPONSIVE PAGE TOUTES REVUES
+	// SECTION TOUTES REVUES
+	.section-revues-toutes__container {
+		flex-direction: column-reverse;
+	}
+
+	.section-revues-toutes__map {
+		width: 100%;
+		margin-bottom: 50px;
+	}
+
+	.section-revues-toutes__map--europe {
+		width: 70%;
+		margin-bottom: 50px;
+	}
+
+	.section-revues-toutes__list {
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	.section-revues-toutes__list-link {
+		font-size: 30px;
+	}
+
+	// RESPONSIVE PAGE ARTICLE
+	// SECTION ARTICLE
+	.section-article__paragraph {
+		width: 100%;
+	}
+
+	.section-article__caroussel {
+		width: 320px;
+		height: 280px;
+	}
+}

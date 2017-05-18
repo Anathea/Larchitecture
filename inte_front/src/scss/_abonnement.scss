@@ -1,0 +1,119 @@
+// PAGE ABONNEMENT
+// SECTION ABONNEMENT
+.section-abonnement {
+	padding: 150px 15% 100px 15%;
+	background-image: url('../../src/img/img-content/bckd-abonnement.jpg');
+	background-size: cover;
+	text-align: center;
+}
+
+.section-abonnement__title {
+	@extend .titles2;
+	margin-bottom: 95px;
+	color: #000;
+	text-align: left;
+}
+
+.section-abonnement__form {
+	margin-bottom: 200px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	height: 500px;
+	text-align: left;
+}
+
+.section-abonnement__form-part {
+	width: 30%;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.section-abonnement__label {
+	font-family: $title-font;
+	font-size: 18px;
+	color: #000;
+}
+
+.section-abonnement__input,
+.section-abonnement__select,
+.section-abonnement__button {
+	@extend .input-form;
+}
+
+.section-abonnement__input:focus,
+.section-abonnement__select:focus,
+.section-abonnement__button:focus {
+	outline: none;
+}
+
+.section-abonnement__input--validator,
+.section-abonnement__button {
+	width: 40%;
+	margin: auto;
+	@extend .input-form-validator;
+}
+
+.section-abonnement__table {
+	@extend .table-price;
+}
+
+.section-abonnement__table--active {
+	display: block;
+}
+
+.section-abonnement__td {
+	text-align: left;
+	width: 20%;
+}
+
+.section-abonnement__button {
+	display: inline-block;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.section-abonnement__form-step {
+	display: none;
+}
+
+.section-abonnement__button-form {
+	display: none;
+}
+
+.section-abonnement__button--euro {
+	margin-right: 80px;
+}
+
+.section-abonnement__button--euro,
+.section-abonnement__button--franc {
+	margin-bottom: 50px;
+}
+
+.section-abonnement__button--hide {
+	display: none;
+}
+
+.section-abonnement__img {
+	display: block;
+	margin: 0 auto;
+}
+
+.section-abonnement__price {
+	display: block;
+	background: $logo-blue;
+	padding: 20px;
+	margin-bottom: 35px;
+	font-family: $title-font;
+	font-size: 26px;
+	color: #fff;
+	border-radius: 8px;
+}
+
+.section-abonnement__form-mobile,
+.section-abonnement__button--price,
+.section-abonnement__price {
+	display: none;
+}
