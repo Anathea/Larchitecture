@@ -22,7 +22,7 @@ class Revue {
     public $date;
     public $numero;
     public $visibilite;
-    
+
     public function __construct($id = -1, $date = null, $numero = null, $visibilite = 1) 
     {
         $this->id = $id;
@@ -87,11 +87,13 @@ class Revue {
     
     public function delete() 
     {
-        $sql = "DELETE FROM
-                  `revues`
+        $sql = "DELETE rev, rr
+                FROM
+                  `revues` AS rev
+                LEFT JOIN `revues_regions` AS rr
+                  ON rr.id_revue = rev.id
                 WHERE
-                  `id` = :id
-                LIMIT 1
+                  rev.id = :id
                 ;";
         $stmt = DB::$pdo->prepare($sql);
         $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);

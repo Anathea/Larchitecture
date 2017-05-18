@@ -21,7 +21,7 @@ class Region {
     
     public $id;
     public $nom;
-    
+
     public function __construct($id = -1, $nom = null) 
     {
         $this->id = $id;
@@ -74,11 +74,15 @@ class Region {
     
     public function delete() 
     {
-        $sql = "DELETE FROM
-                  `regions`
+        $sql = "DELETE reg, rr, part
+                FROM
+                  `regions` AS reg
+                LEFT JOIN `revues_regions` AS rr
+                  ON rr.id_region = reg.id
+                LEFT JOIN `partenaires` AS part
+                  ON part.id_region = reg.id
                 WHERE
-                  `id` = :id
-                LIMIT 1
+                  reg.id = :id
                 ;";
         $stmt = DB::$pdo->prepare($sql);
         $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
