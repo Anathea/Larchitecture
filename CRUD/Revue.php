@@ -43,6 +43,9 @@ class Revue {
         $stmt->bindValue(':numero', $this->numero, PDO::PARAM_INT);
         $stmt->bindValue(':visibilite', $this->visibilite, PDO::PARAM_INT);
         $stmt->execute();
+        if ($stmt->errorCode() !== '00000') {
+            die('Truc');
+        }
         $this->id = DB::$pdo->lastInsertId();
     }
 

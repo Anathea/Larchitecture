@@ -55,7 +55,11 @@ class Partenaire {
     public function read()
     {
         $sql = "SELECT
-                  `nom`, `libelle`, `id_region`, `departement`, `site`
+                  `nom`,
+                  `libelle`,
+                  `id_region`,
+                  `departement`,
+                  `site`
                 FROM
                   `partenaires`
                 WHERE
@@ -111,7 +115,11 @@ class Partenaire {
     public static function readPartenaires($region)
     {
         $sql = "SELECT
-                  `nom`, `libelle`, `id_region`, `departement`, `site`
+                  `nom`,
+                  `libelle`,
+                  `id_region`,
+                  `departement`,
+                  `site`
                 FROM
                   `partenaires`
                 WHERE
@@ -124,6 +132,32 @@ class Partenaire {
         $partenaires = [];
         foreach ($data as $row) {
             $partenaires[] = new Partenaire($row["nom"], $row["libelle"], $row["id_region"], $row["departement"], $row["site"]);
+        }
+        return $partenaires;
+    }
+    
+    public static function readAll($offset = 0, $count = PHP_INT_MAX)
+    {
+        $sql = "SELECT
+                  `id`,
+                  `nom`,
+                  `libelle`,
+                  `id_region`,
+                  `departement`,
+                  `site`
+                  FROM
+                  `partenaires`
+                  LIMIT :offset, :count
+                  ;";
+        $stmt = DB::$pdo->prepare($sql);
+        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $stmt->bindValue(':count', $count, PDO::PARAM_INT);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $partenaires = [];
+        foreach ($data as $row) {
+            $partenaire = new Partenaire($row["id"], $row["nom"], $row["libelle"], $row["id_region"], $row["departement"], $row["site"]);
+            $partenaires[] = $partenaire;
         }
         return $partenaires;
     }
