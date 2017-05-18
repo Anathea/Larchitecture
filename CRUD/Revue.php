@@ -99,5 +99,34 @@ class Revue {
         $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
         $stmt->execute();
     }
-
+    
+    public function readRegions()
+    {
+        return RevueRegion::readRegions($this);
+    }
+    
+    public static function readAll($offset = 0, $count = PHP_INT_MAX)
+    {
+        $sql = "SELECT 
+                  `id`,
+                  `date`,
+                  `numero`,
+                  `visibilite` 
+                FROM 
+                  `revues`
+                LIMIT :offset, :count
+                ;";
+        $stmt = DB::$pdo->prepare($sql);
+        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $stmt->bindValue(':count', $count, PDO::PARAM_INT);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $revs = [];
+        foreach ($data as $row) {
+            $rev = new Revue($row["id"], $row["date"], $row["numero"], $row["visibilite"]);
+            $revs[] = $rev;
+        } 
+        return $revs;
+    }
+    
 }

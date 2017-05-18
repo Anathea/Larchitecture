@@ -89,4 +89,42 @@ class Region {
         $stmt->execute();
     }
 
+    public function createPartenaire($part)
+    {
+        $part->id_region = $this->id;
+        $part->create();
+    }
+    
+    public function readPartenaires()
+    {
+        return Partenaire::readPartenaires($this);
+    }
+    
+    public function readRevues()
+    {
+        return RevueRegion::readRevues($this);
+    }
+    
+    public static function readAll($offset = 0, $count = PHP_INT_MAX)
+    {
+        $sql = "SELECT
+                  `id`,
+                  `nom` 
+                  FROM 
+                  `regions` 
+                  LIMIT :offset, :count
+                  ;";
+        $stmt = DB::$pdo->prepare($sql);
+        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $stmt->bindValue(':count', $count, PDO::PARAM_INT);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $regs = [];
+        foreach ($data as $row) {
+            $reg = new Region($row["id"], $row["nom"]);
+            $regs[] = $reg;
+        } 
+        return $regs;
+    }
+    
 }
