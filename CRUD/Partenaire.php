@@ -108,4 +108,24 @@ class Partenaire {
         $stmt->execute();
     }
     
+    public static function readPartenaires($region)
+    {
+        $sql = "SELECT
+                  `nom`, `libelle`, `id_region`, `departement`, `site`
+                FROM
+                  `partenaires`
+                WHERE
+                  `id_region` = :id
+                  ;";
+        $stmt = DB::$pdo->prepare($sql);
+        $stmt->bindValue(':id', $region->id, PDO::PARAM_INT);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $partenaires = [];
+        foreach ($data as $row) {
+            $partenaires[] = new Partenaire($row["nom"], $row["libelle"], $row["id_region"], $row["departement"], $row["site"]);
+        }
+        return $partenaires;
+    }
+    
 }
