@@ -1,0 +1,100 @@
+// PAGE REVUES
+// SECTION REVUES
+.section-revues {
+	padding: 140px 0 0 15%;
+	background-image: url('../../src/img/img-content/bckd-actu.jpg');
+	background-size: cover;
+	text-align: center;
+}
+
+.section-revues__title {
+	@extend .titles2;
+	margin-bottom: 95px;
+	color: #000;
+	text-align: left;
+}
+
+.section-revues__couv {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.section-revues__container {
+	height: 650px;
+	width: 100%;
+	overflow: scroll;
+	margin-bottom: 0;
+}
+
+.section-revues__content {
+	height: 100%;
+	width: 200%;
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+.section-revues__revue {
+	display: inline-block;
+	margin-right: 20px;
+	height: 565px;
+	width: 375px;
+	background: #fff;
+	border-radius: 5px;
+}
+
+.section-revues__revue-title {
+	font-family: $title-font;
+	text-transform: uppercase;
+	font-size: 32px;
+	color: #000;
+}
+
+.section-revues__link {
+	display: block;
+	width: 100%;
+	padding: 25px 0;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	border: none;
+	font-family: $text-font;
+	font-size: 18px;
+	color: #000;
+	width: 30%;
+	background: $logo-blue;
+	color: #fff;
+	margin: 0 auto 70px auto;
+	cursor: pointer;
+	text-align: center;
+}
+
+//SECTION PARTENAIRES
+.section-partenaires {
+	padding: 50px 15% 100px 15%;
+	background-image: url('../../src/img/img-content/bckd-actu.jpg');
+	background-size: cover;
+	text-align: center;
+}
+
+.section-partenaires__title {
+	@extend .titles2;
+	margin-bottom: 95px;
+	color: #000;
+	text-align: left;
+}
+
+.section-partenaires__subtitle {
+	font-family: $text-font;
+	font-size: 28px;
+	margin-bottom: 50px;
+	color: #000;
+	text-align: center;
+}
+
+.section-partenaires__list {
+	margin-bottom: 40px;
+}
+
+.section-partenaires__link {
+	color: $logo-blue;
+}

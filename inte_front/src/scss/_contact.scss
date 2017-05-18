@@ -1,0 +1,55 @@
+// PAGE CONTACT
+// SECTION CONTACT
+.section-contact {
+	padding: 150px 15% 100px 15%;
+	background-image: url('../../src/img/img-content/bckd-contact.jpg');
+	background-size: cover;
+}
+
+.section-contact__title {
+	@extend .titles2;
+	margin-bottom: 95px;
+	color: #000;
+}
+
+.section-contact__form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	height: 500px;
+}
+
+.section-contact__form-part {
+	width: 46%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.section-contact__label {
+	font-family: $title-font;
+	font-size: 18px;
+	color: #000;
+}
+
+.section-contact__input,
+.section-contact__textarea,
+.section-contact__select {
+	@extend .input-form;
+}
+
+.section-contact__input:focus,
+.section-contact__textarea:focus,
+.section-contact__select:focus {
+	outline: none;
+}
+
+.section-contact__textarea {
+	height: 245px;
+}
+
+.section-contact__input--validator {
+	width: 60%;
+	margin: auto;
+	@extend .input-form-validator;
+}

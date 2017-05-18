@@ -1,0 +1,61 @@
+// PAGE ARTICLE
+// SECTION ARTICLE
+.section-article {
+	padding: 150px 15% 100px 15%;
+	background-image: url('../../src/img/img-content/bckd-contact.jpg');
+	background-size: cover;
+}
+
+.section-article__title {
+	@extend .titles2;
+	margin-bottom: 95px;
+	color: #000;
+}
+
+.section-article__container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.section-article__caroussel {
+	margin: 0 auto 30px auto;
+	width: 475px;
+	height: 324px;
+	background-image: none;
+	background-size: cover;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: 0.6s;
+}
+
+.section-article__button-caroussel {
+	margin: 5px;
+	width: 30px;
+	height: 60px;
+	border-radius: 50px;
+	background: rgba(255, 255, 255, 0.4);
+	color: rgba(0, 0, 0, 0.8);
+	border: none;
+	font-family: $title-font;
+	font-size: 20px;
+}
+
+.section-article__button-caroussel:focus {
+	outline: none;
+}
+
+.section-article__paragraph {
+	display: inline-block;
+	width: 48%;
+	margin-bottom: 30px;
+	font-family: $title-font;
+	font-size: 18px;
+	line-height: 25px;
+}
+
+.section-article__image {
+	display: block;
+	width: 100%;
+}

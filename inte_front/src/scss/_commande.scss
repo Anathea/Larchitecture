@@ -1,0 +1,119 @@
+// PAGE COMMANDE
+// SECTION COMMANDE
+.section-commande {
+	padding: 150px 15% 100px 15%;
+	background-image: url('../../src/img/img-content/bckd-commande.jpg');
+	background-size: cover;
+	text-align: center;
+}
+
+.section-commande__title {
+	@extend .titles2;
+	margin-bottom: 95px;
+	color: #000;
+	text-align: left;
+}
+
+.section-commande__form {
+	margin-bottom: 200px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	height: 500px;
+	text-align: left;
+}
+
+.section-commande__form-part {
+	width: 30%;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.section-commande__label {
+	font-family: $title-font;
+	font-size: 18px;
+	color: #000;
+}
+
+.section-commande__input,
+.section-commande__select,
+.section-commande__button {
+	@extend .input-form;
+}
+
+.section-commande__input:focus,
+.section-commande__select:focus,
+.section-commande__button:focus {
+	outline: none;
+}
+
+.section-commande__input--validator,
+.section-commande__button {
+	width: 40%;
+	margin: auto;
+	@extend .input-form-validator;
+}
+
+.section-commande__table {
+	@extend .table-price;
+}
+
+.section-commande__table--active {
+	display: block;
+}
+
+.section-commande__td {
+	text-align: left;
+	width: 20%;
+}
+
+.section-commande__button {
+	display: inline-block;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.section-commande__form-step {
+	display: none;
+}
+
+.section-commande__button-form {
+	display: none;
+}
+
+.section-commande__button--euro {
+	margin-right: 80px;
+}
+
+.section-commande__button--euro,
+.section-commande__button--franc {
+	margin-bottom: 50px;
+}
+
+.section-commande__button--hide {
+	display: none;
+}
+
+.section-commande__img {
+	display: block;
+	margin: 0 auto;
+}
+
+.section-commande__price {
+	display: block;
+	background: $logo-blue;
+	padding: 20px;
+	margin-bottom: 35px;
+	font-family: $title-font;
+	font-size: 26px;
+	color: #fff;
+	border-radius: 8px;
+}
+
+.section-commande__form-mobile,
+.section-commande__button--price,
+.section-commande__price {
+	display: none;
+}

@@ -1,0 +1,15 @@
+// PAGE APPEL D'OFFRE
+// SECTION APPEL-OFFRE
+.section-appel-offre {
+	padding: 150px 15% 100px 15%;
+}
+
+.section-appel-offre__title {
+	@extend .titles2;
+	margin-bottom: 95px;
+	color: #000;
+}
+
+.section-appel-offre__iframe {
+	width: 100%;
+}
