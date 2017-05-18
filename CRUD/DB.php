@@ -17,8 +17,8 @@ class DB {
     private static $dbName = "Larchitecte";
     private static $host = "localhost";
     private static $port = "3306";
-    private static $user = "admin";
-    private static $password = "admin";
+    private static $user = "root";
+    private static $password = "root";
     public static $pdo = null;
 
     public static function init()

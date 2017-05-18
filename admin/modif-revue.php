@@ -68,4 +68,4 @@ require 'header.php';
 		</table>
 	</div>
     </body>
-</php>
+</html>
